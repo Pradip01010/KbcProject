@@ -1,0 +1,30 @@
+﻿@model IEnumerable<KbcProject.Models.GameSession>
+
+@{
+    ViewData["Title"] = "My Game Sessions";
+}
+
+<div class="container mt-4">
+    <h2 class="text-primary text-center">My Game Sessions</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Score</th>
+                <th>Started At</th>
+                <th>Ended At</th>
+                <th>Time Taken</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var session in Model)
+            {
+                <tr>
+                    <td>@session.Score</td>
+                    <td>@session.StartedAt.ToString("g")</td>
+                    <td>@session.EndedAt.ToString("g")</td>
+                    <td>@session.TimeTaken.TotalSeconds seconds</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

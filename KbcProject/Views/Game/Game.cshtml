@@ -1,0 +1,36 @@
+﻿@model KbcProject.Models.Question
+
+@{
+    ViewData["Title"] = "Kaun Banega Crorepati";
+}
+
+<div class="container mt-4">
+    <h2 class="text-primary text-center">Kaun Banega Crorepati</h2>
+
+    <div class="card shadow p-4">
+        <h4 class="mb-3">@Model.Text</h4>
+
+        <form method="post" asp-action="SubmitAnswer">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="userAnswer" value="@Model.OptionA" required>
+                <label class="form-check-label">@Model.OptionA</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="userAnswer" value="@Model.OptionB" required>
+                <label class="form-check-label">@Model.OptionB</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="userAnswer" value="@Model.OptionC" required>
+                <label class="form-check-label">@Model.OptionC</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="userAnswer" value="@Model.OptionD" required>
+                <label class="form-check-label">@Model.OptionD</label>
+            </div>
+
+            <button type="submit" class="btn btn-success mt-3">Submit Answer</button>
+        </form>
+    </div>
+</div>
+
+

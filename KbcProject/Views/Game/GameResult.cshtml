@@ -1,0 +1,13 @@
+﻿@model KbcProject.Models.GameResultViewModel
+
+@{
+    ViewData["Title"] = "Game Over";
+}
+
+<h2>Game Over</h2>
+
+<p><strong>Score:</strong> @Model.Score</p>
+<p><strong>Time Taken:</strong> @Model.TimeTaken</p>
+
+<a asp-controller="Home" asp-action="Index">Return to Home</a>
+
